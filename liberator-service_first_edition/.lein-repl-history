@@ -1,0 +1,14 @@
+(use 'liberator-service.repl)
+(start-server)
+j
+cheshire.core/generate-string
+(cheshire.core/generate-string "hey")
+(use 'liberator-service.repl)
+(start-server)
+(use 'liberator-service.repl)
+(start-server)
+(@users)
+(prn @users)
+(use 'liberator-service.routes.home)
+users
+(prn @users)

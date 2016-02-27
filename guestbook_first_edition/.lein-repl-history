@@ -1,0 +1,53 @@
+(use 'guestbook.repl)
+(start-server)
+(use 'guestbook.routes.home)
+(home)
+(use 'guestbook.routes.home)
+(home)
+kj
+(home)
+(use 'hiccup')
+(require 'hiccup)
+(use 'guestbook.views.layout)
+(common)
+(defn do-it [value]
+(cond
+(empty? value)
+(prn "nope")
+:else
+(prn "yeah!")
+)
+(do-it "test")
+(do-it nil)
+(do-it "")
+kjk
+reset!
+(reset!
+)
+(use 'guestbook.repl)
+(start-server)
+(use 'guestbook.repl)
+(start-server)
+(use 'guestbook.models.db)
+(create-guestbook-table)
+(use 'guestbook.routes.home)
+(show-guests)
+(use 'guestbook.models.db)
+db
+read-guests
+(ns-unmap 'user 'save-message)
+(use 'guestbook.models.db)
+(save-message "Bob" "hello")
+(read-guests)
+(show-guests)
+(stop-server)
+(start-server)
+jjjk
+(stop-server)
+(start-server)
+(stop-server)
+(start-server)
+(use 'guestbook.repl)
+(start-server)
+(use 'guestbook.models.db)
+(create-user-table)
