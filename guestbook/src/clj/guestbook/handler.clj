@@ -2,6 +2,7 @@
   (:require [compojure.core :refer [defroutes routes wrap-routes]]
             [guestbook.layout :refer [error-page]]
             [guestbook.routes.home :refer [home-routes]]
+            [guestbook.routes.ws :refer [websocket-routes]]
             [guestbook.middleware :as middleware]
             [clojure.tools.logging :as log]
             [compojure.route :as route]
@@ -32,6 +33,8 @@
 
 (def app-routes
   (routes
+    #'websocket-routes ; #' shorthand for (var some-thing/whatever), i.e. getting metadata for a defined symbol, as opposed to 
+                       ; what it's pointing to
     (wrap-routes #'home-routes middleware/wrap-csrf)
     (route/not-found
       (:body
